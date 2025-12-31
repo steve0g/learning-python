@@ -17,19 +17,5 @@ print(type(nombre))
 nombre = int(nombre)
 print(type(nombre))
 
-# age = int(input("Age ? "))
+age = int(input("Age ? "))
 print(type(age))
-
-age = age + "5"
-
-
-# Quel est le problème potentiel dans ce code ?
-
-age = int(input("Age : "))
-print(age + 10)
-
-# 👉 Donne 2 saisies utilisateur qui feront planter le programme.
-
-x = input("Nombre : ")
-y = int(x)
-print(y)
