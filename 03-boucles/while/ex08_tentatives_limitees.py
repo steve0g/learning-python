@@ -16,5 +16,3 @@ if mot_de_passe_saisi == secret:
     print("✅ Mot de passe correct, vous avez accès au compte !")
 else:
     print("🔒 Compte bloqué après 3 tentatives")
-
-
