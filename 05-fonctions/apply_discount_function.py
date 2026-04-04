@@ -15,11 +15,6 @@ Exemple :
 - Prix = 50, Réduction = 20% → Prix Final = 40
 """
 
-# price = 50
-# discount = 20
-# discount_amount = 10
-# final_price = 40
-
 def apply_discount(price, discount):
     # Validations de type
     if not isinstance(price, (int, float)):
