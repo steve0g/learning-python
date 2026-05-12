@@ -78,10 +78,7 @@ def faire_un_don(compte, montant):
     """Dépose un montant sur le compte d'un bénéficiaire."""
     compte.deposer(montant)
 
-        
-
 # --- Exécution (tests) ---
-
 if __name__ == "__main__":
 
     # --- Phase 1 : Compte bancaire classique ---
@@ -95,12 +92,6 @@ if __name__ == "__main__":
     except ValueError as e:
         print(f"Sécurité retrait : {e}")
 
-    # Ce qu'on veut tester :
-    # Créer un compte épargne
-    # Tester la limite de retrait à 200€
-    # Faire un retrait valide
-    # Calculer les intérêts
-    # Afficher le solde final
 
     # --- Phase 2 : Compte épargne ---
     print("\n--- Phase 2 : Compte Epargne (Steve) ---")
@@ -115,32 +106,17 @@ if __name__ == "__main__":
     mon_epargne.calculer_interets()
     mon_epargne.afficher_solde()
 
-    # Ce qu'on veut tester :
-    # Faire un don de Marc vers le compte de Steve
-    # Afficher le solde de Steve avant et après
-
     # --- Phase 3 : Don ---
     print("\n--- Phase 3 : Don (Marc vers Steve) ---")
     print(f"Solde Steve avant don : {mon_epargne.solde} €")
     faire_un_don(mon_epargne, 100)
     print(f"Solde Steve après don : {mon_epargne.solde} €")
 
-
-    # Ce qu'on veut tester :
-    # Créer un compte crypto
-    # Déposer des ETH avec les frais de réseau de 2%
-    # Afficher le solde
-
     # --- Phase 4 : Compte Crypto ---
     print("\n--- Phase 4 : Compte Crypto (Gnak) ---")
     compte_crypto = CompteCrypto("Gnak", 10)
     compte_crypto.deposer(5)
     compte_crypto.afficher_solde()
-
-
-    # Ce qu'on veut tester :
-    # Afficher tous les comptes dans une seule boucle
-    # Montrer que afficher_solde() s'adapte selon le type d'objet
 
     # --- Phase 5 : Rapport d'audit ---
     print("\n" + "="*40)
@@ -153,53 +129,3 @@ if __name__ == "__main__":
         compte.afficher_solde()
 
     print("="*40)
-
-# if __name__ == "__main__":
-    
-#     # ENCAPSULATION & ABSTRACTION:
-#     # On crée un objet et on manipule ses données via des méthodes sécurisées.
-#     # L'utilisateur n'a pas besoin de savoir comment le solde est stocké.
-
-#     print("\n--- Phase 1 : Test Encapsulation (Marc) ---")
-#     compte_marc = CompteBancaire("Marc", 100)
-#     compte_marc.deposer(50)
-
-#     # L'appel à afficher_solde() utilise le getter sécurisé
-#     compte_marc.afficher_solde()
-
-#     # HÉRITAGE (ET EXTENSION): CompteEpargne récupère tout du parent et ajoute ses propres règles.
-
-#     print("\n--- Phase 2: Test Héritage & Super() (Steve) ---")
-#     mon_epargne = CompteEpargne("Steve", 1000, 3)
-
-#     # On teste la sécurité (On retire 500 alors que la limite est 200)
-#     try:
-#         print("Tentative de retrait de 500€ ...")
-#         mon_epargne.retirer(500)
-#     except ValueError as e:
-#         print(f"Sécurité : {e}")
-
-#     # Utilisation d'une méthode spécifique à l'enfant
-#     mon_epargne.retirer(150)
-#     mon_epargne.calculer_interets()
-#     mon_epargne.afficher_solde()
-
-#     """POLYMORPHISME: On traite des objets de types différents via une interface identique."""
-
-#     print("\n" + "="*40)
-#     print("    RAPPORT D'AUDIT POLYMORPHE")
-#     print("="*40)
-
-#     audit_liste = [
-#         CompteBancaire("Marc", 100),        # Objet CompteBancaire
-#         CompteEpargne("Steve", 1000, 3),    # Objet CompteEpargne
-#         CompteCrypto("Gnak", 10)            # Objet CompteCrypto
-#     ]
-
-#     for compte in audit_liste:
-#         compte.afficher_solde()
-
-#     print("="*40)
-
-#     print(compte_marc.afficher_solde)
-#     compte_marc.afficher_solde()
