@@ -49,7 +49,7 @@ print(plat_1.describe())
 print(plat_2.describe())
 
 
-# --- Exercice 3 : Bibliothèque ---
+# --- Exercice 3 : Library ---
 
 class Auteur:
     def __init__(self, name: str, nationality: str):
